@@ -10,4 +10,6 @@ public class SpringBootEcommerceApplication {
 		SpringApplication.run(SpringBootEcommerceApplication.class, args);
 	}
 
+	// here i want to output somethiing using commandine runner
+
 }
