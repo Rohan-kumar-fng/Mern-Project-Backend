@@ -17,4 +17,12 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     // You can also write it in @Query field.(TODO: implement using @Query)
     Page<Product> findByCategoryId(@Param("id") Long id, Pageable pageable);
+
+
+    // Here It is automatically create the query as Select * from Product p where p.name like concat('%',"name,'%')
+    Page<Product> findByNameContaining(@Param("name") String name, Pageable pageable);
+
+    // checking for name
+    // Here you have to put the whole name
+    Page<Product> findByName(@Param("name") String name, Pageable pageable);
 }
